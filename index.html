@@ -1,0 +1,338 @@
+<!-- ======================================
+     "Independent" Landing Event Page
+    =======================================
+
+    This is a template crafted with love with some simple
+    but important objectives:
+    - work on modern browsers
+    - work on mobile & be responsive
+    - use only native html/css, no external dependencies
+    - avoid JS if possible
+    - in a craftsman spirit, keep things simples and clear
+
+    v1.0
+
+    (c) 2018 Rui Carvalho, distributed under GNU Licence 
+-->
+<html>
+<head>
+    <title>Unplugged Conference Paris 2018</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato:100|Amatic+SC:700|Pacifico|Titan+One');
+
+        /* ==== Variabbles ========= */
+        :root{
+            /**** Fonts ****/
+            --font-bold : 'Titan One', cursive;
+            --font-cursive : 'Pacifico', cursive;
+            --font-thin : 'Amatic SC', cursive;
+            --font-default: 'Lato', sans-serif;
+            /**** Colors ****/
+            --white: #EEEEEE;
+            --opaque-white:rgba(255,255,255,0.3);
+            --black: #000000;
+            --black-contrast: #111111;
+        }
+        .font-bold {font-family: var(--font-bold)}
+        .font-cursive {font-family: var(--font-cursive)}
+        .font-thin {font-family: var(--font-thin)}
+        
+        .opaque-white {
+            background: var(--opaque-white);
+            padding:20px;
+            border-radius: 5px;
+        }
+        
+        /* ==== Elements ============= */
+        body {
+            height: 100vh;
+            margin: 0;padding: 0;
+            font-family: var(--font-default);
+            font-size: 1em;
+            background-color: var(--black);
+        }
+
+        h1,h2,h3,h4 {
+            display: block; width:100%; margin:0px; margin-top:20px;
+        }
+        h1    { font-family: var(--font-bold); font-size: 4em;}
+        h2    { font-family: var(--font-cursive); font-size: 3em;}
+        h3,h4 { font-family: var(--font-thin); font-size:2em;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column; 
+        }
+        
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height:60px;
+            background-color: black;
+            color:seashell;
+            font-family: var(--font-thin);
+        }
+
+        /* ===== Helpers ======================== */
+        .padaround1{ padding-left: 10vh; padding-right:10vh;}
+        .padaround2{ padding-left: 15vh; padding-right:15vh;}
+        
+        /* ===== component specific ============= */
+        .page {
+            background: url('assets/images/pub-room.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+        }
+        nav.menu input { display: none;}
+        nav.menu label { display: none;}
+        nav.menu {
+            width: 100%;
+            text-align: right;
+            height:3em;
+            line-height: 3em;
+            font-size: 2em;
+            background-color:var(--black);
+            color:var(--white);
+            position: fixed;
+            top:0px;
+            right:0px;
+            z-index:10;
+            display: flex;
+            flex-direction: row; 
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+        nav.menu a {
+            padding-right: 20px;
+            font-family: var(--font-thin);
+            color: yellow;
+        }
+
+        nav.menu .title {
+            font-family: var(--font-bold);
+            padding-left: 20px;
+        }
+        .home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 100;
+        }
+        .home h1 {
+            color: rgb(26, 25, 22);
+            line-height: 8vw;
+            font-size:8vw;
+            margin-right: 10px;
+        }
+
+        
+        .full {
+            min-height: 94vh;
+            display: flex;
+            flex-direction: column; 
+            background-color: white;
+        }
+        .content {
+            padding-left: 15vh;
+            padding-right: 15vh;
+        }
+
+        .content:nth-of-type(2n+1) {
+            background-color: yellow;
+        }
+
+        .transparentBar {
+            background: transparent;
+            background: url('assets/images/relax.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 30vh;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: flex;
+            flex-direction: column; 
+        }
+
+        .transparentBar h3 {
+            font-size: 60px;
+            color:var(--white);
+        }
+        
+        /* ===== Responsive fixes ======================== */
+        @media only screen and (max-width : 400px) {
+            body { font-size: 1em;}
+            .content { padding-left: 5vh; padding-right: 5vh; text-align: justify;}
+            h2 {  font-family: var(--font-cursive);}
+            nav.menu {
+                display: block;
+                height: 50px;
+                line-height: 50px;
+            }
+            nav.menu div.links {
+                display: none;
+                height: 0;
+                overflow: hidden;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top:0;
+            }
+            nav.menu .links a {
+                line-height: 50px;
+                font-size: 20px;
+                background-color: var(--black);
+                width: 100%;
+                display: block;
+                text-align: center;
+                margin-top:0px;
+                border-top: 1px solid yellow;
+            }
+            nav.menu .links a:hover {
+                background-color: var(--black-contrast);
+            }
+            nav.menu .title {display: none;}
+            nav.menu input { display: none; position: fixed;top:0;}
+            nav.menu label { display: block; margin-right: 20px;}
+            .mobile-check:checked ~ div.links {
+                display: block;
+                height: 300px;
+            }
+            .padaround2{ padding-left: 0; padding-right:0;}
+        }       
+    </style>
+</head>
+<body>
+    <article class="page">
+    
+        <nav class="menu">
+
+            <span class="title">Unplugged Conf</span>
+        
+            <input type="checkbox" id="menu-check" class="mobile-check" />
+                <label for="menu-check" class="label-for-menu-check">[=]</label>
+
+            <div class="links">
+                
+                <a href="#about">About</a>
+                <a href="#agenda">Agenda</a>
+                <a href="#location">Location</a>
+                <a href="#register">Register</a>
+            </div>
+
+        </nav>
+    
+    <!--==================[ Section ]====================-->
+
+    <section class="home">
+        <div class="opaque-white">
+            <h1>Unplugged Conf</h1>
+            <h2 class="font-thin">Paris</h2>
+            <h3>Friday, 18 of May, 7.00 pm</h3>
+            <h3 class="padaround2">an alternative learning playground for pationate software developers</h3>
+        </div>
+    </section>
+        
+    
+
+
+    <!--==================[ Section ]====================-->
+
+    <section  class="full" id="about">
+            <div class="content">
+                <h2>About</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu libero, finibus vitae ipsum vel, suscipit rhoncus sem. Sed at elementum nisi, id dictum eros. Pellentesque blandit faucibus eleifend. Aliquam volutpat nibh augue, a condimentum dolor luctus sit amet. Etiam non sapien ligula. Suspendisse nibh mauris, congue in magna sit amet, ultricies feugiat odio. Donec non tellus ante. Vivamus ipsum quam, vehicula vitae blandit vitae, aliquam eu turpis. Praesent nec ex pretium lacus porta interdum. Quisque euismod luctus quam, vel mollis ex mattis sed.
+                </p><p>    
+                    Praesent porta tempus dignissim. Maecenas ex nulla, eleifend at turpis sit amet, sagittis dictum velit. Vestibulum eleifend nisl orci. Integer maximus a tortor ut volutpat. Ut cursus ullamcorper faucibus. Nullam ultricies lectus ipsum, ut vulputate diam condimentum sed. In viverra quam eget lectus tempor, ac eleifend massa sollicitudin. Mauris ac metus ipsum. Fusce sed velit imperdiet, blandit nulla pulvinar, gravida est. Sed egestas eget massa vitae porta. Donec interdum vehicula est, nec iaculis nibh viverra sit amet. Ut eget tristique quam. Morbi vel bibendum sapien. Nullam ornare ornare libero nec ultricies.
+                    </p><p>   
+                Donec bibendum ligula neque, a bibendum ipsum mattis in. Nunc blandit, ligula sed tempus viverra, diam dolor pulvinar lectus, quis gravida dui lorem imperdiet lorem. Integer vitae leo finibus magna condimentum sodales ac id arcu. Fusce vel diam pulvinar, mattis nibh ut, ultrices leo. Nam finibus vestibulum nisi ut sagittis. Nam vulputate odio vel iaculis bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur ante in mi aliquet, eget fringilla purus aliquam. Nunc volutpat aliquet risus, ac maximus metus tempor sed.
+                </p>  
+            </div>
+    </section>
+
+
+
+
+
+    <!--==================[ Section ]====================-->
+
+    <section  class="full" id="agenda">
+            <div class="transparentBar white">
+                <h3>Time to relax</h3>
+            </div>
+            
+            <div class="content">
+                <h2>Agenda</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu libero, finibus vitae ipsum vel, suscipit rhoncus sem. Sed at elementum nisi, id dictum eros. Pellentesque blandit faucibus eleifend. Aliquam volutpat nibh augue, a condimentum dolor luctus sit amet. Etiam non sapien ligula. Suspendisse nibh mauris, congue in magna sit amet, ultricies feugiat odio. Donec non tellus ante. Vivamus ipsum quam, vehicula vitae blandit vitae, aliquam eu turpis. Praesent nec ex pretium lacus porta interdum. Quisque euismod luctus quam, vel mollis ex mattis sed.
+                </p><p>    
+                    Praesent porta tempus dignissim. Maecenas ex nulla, eleifend at turpis sit amet, sagittis dictum velit. Vestibulum eleifend nisl orci. Integer maximus a tortor ut volutpat. Ut cursus ullamcorper faucibus. Nullam ultricies lectus ipsum, ut vulputate diam condimentum sed. In viverra quam eget lectus tempor, ac eleifend massa sollicitudin. Mauris ac metus ipsum. Fusce sed velit imperdiet, blandit nulla pulvinar, gravida est. Sed egestas eget massa vitae porta. Donec interdum vehicula est, nec iaculis nibh viverra sit amet. Ut eget tristique quam. Morbi vel bibendum sapien. Nullam ornare ornare libero nec ultricies.
+                    </p><p>   
+                Donec bibendum ligula neque, a bibendum ipsum mattis in. Nunc blandit, ligula sed tempus viverra, diam dolor pulvinar lectus, quis gravida dui lorem imperdiet lorem. Integer vitae leo finibus magna condimentum sodales ac id arcu. Fusce vel diam pulvinar, mattis nibh ut, ultrices leo. Nam finibus vestibulum nisi ut sagittis. Nam vulputate odio vel iaculis bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur ante in mi aliquet, eget fringilla purus aliquam. Nunc volutpat aliquet risus, ac maximus metus tempor sed.
+                </p>  
+            </div>
+    </section>
+
+
+
+
+
+
+
+    <!--==================[ Section ]====================-->
+
+    <section  class="full" id="location">
+            <div class="transparentBar white">
+                <h3>Prepare to be surprised!</h3>
+            </div>
+            
+            <div class="content">
+                <h2>Location</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu libero, finibus vitae ipsum vel, suscipit rhoncus sem. Sed at elementum nisi, id dictum eros. Pellentesque blandit faucibus eleifend. Aliquam volutpat nibh augue, a condimentum dolor luctus sit amet. Etiam non sapien ligula. Suspendisse nibh mauris, congue in magna sit amet, ultricies feugiat odio. Donec non tellus ante. Vivamus ipsum quam, vehicula vitae blandit vitae, aliquam eu turpis. Praesent nec ex pretium lacus porta interdum. Quisque euismod luctus quam, vel mollis ex mattis sed.
+                </p><p>    
+                    Praesent porta tempus dignissim. Maecenas ex nulla, eleifend at turpis sit amet, sagittis dictum velit. Vestibulum eleifend nisl orci. Integer maximus a tortor ut volutpat. Ut cursus ullamcorper faucibus. Nullam ultricies lectus ipsum, ut vulputate diam condimentum sed. In viverra quam eget lectus tempor, ac eleifend massa sollicitudin. Mauris ac metus ipsum. Fusce sed velit imperdiet, blandit nulla pulvinar, gravida est. Sed egestas eget massa vitae porta. Donec interdum vehicula est, nec iaculis nibh viverra sit amet. Ut eget tristique quam. Morbi vel bibendum sapien. Nullam ornare ornare libero nec ultricies.
+                    </p><p>   
+                Donec bibendum ligula neque, a bibendum ipsum mattis in. Nunc blandit, ligula sed tempus viverra, diam dolor pulvinar lectus, quis gravida dui lorem imperdiet lorem. Integer vitae leo finibus magna condimentum sodales ac id arcu. Fusce vel diam pulvinar, mattis nibh ut, ultrices leo. Nam finibus vestibulum nisi ut sagittis. Nam vulputate odio vel iaculis bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur ante in mi aliquet, eget fringilla purus aliquam. Nunc volutpat aliquet risus, ac maximus metus tempor sed.
+                </p>  
+            </div>
+    </section>
+
+    
+
+
+
+
+     <!--==================[ Section ]====================-->
+
+     <section  class="full" id="register">
+            <div class="transparentBar white">
+                <h3>Join us!</h3>
+            </div>
+            
+            <div class="content">
+                <h2>Register</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu libero, finibus vitae ipsum vel, suscipit rhoncus sem. Sed at elementum nisi, id dictum eros. Pellentesque blandit faucibus eleifend. Aliquam volutpat nibh augue, a condimentum dolor luctus sit amet. Etiam non sapien ligula. Suspendisse nibh mauris, congue in magna sit amet, ultricies feugiat odio. Donec non tellus ante. Vivamus ipsum quam, vehicula vitae blandit vitae, aliquam eu turpis. Praesent nec ex pretium lacus porta interdum. Quisque euismod luctus quam, vel mollis ex mattis sed.
+                </p><p>    
+                    Praesent porta tempus dignissim. Maecenas ex nulla, eleifend at turpis sit amet, sagittis dictum velit. Vestibulum eleifend nisl orci. Integer maximus a tortor ut volutpat. Ut cursus ullamcorper faucibus. Nullam ultricies lectus ipsum, ut vulputate diam condimentum sed. In viverra quam eget lectus tempor, ac eleifend massa sollicitudin. Mauris ac metus ipsum. Fusce sed velit imperdiet, blandit nulla pulvinar, gravida est. Sed egestas eget massa vitae porta. Donec interdum vehicula est, nec iaculis nibh viverra sit amet. Ut eget tristique quam. Morbi vel bibendum sapien. Nullam ornare ornare libero nec ultricies.
+                    </p><p>   
+                Donec bibendum ligula neque, a bibendum ipsum mattis in. Nunc blandit, ligula sed tempus viverra, diam dolor pulvinar lectus, quis gravida dui lorem imperdiet lorem. Integer vitae leo finibus magna condimentum sodales ac id arcu. Fusce vel diam pulvinar, mattis nibh ut, ultrices leo. Nam finibus vestibulum nisi ut sagittis. Nam vulputate odio vel iaculis bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur ante in mi aliquet, eget fringilla purus aliquam. Nunc volutpat aliquet risus, ac maximus metus tempor sed.
+                </p>  
+            </div>
+    </section>
+
+
+    <footer>
+        <p>(c) 2018, Rui, Dylan, NewCrafts Team &amp; Friends </p>
+    </footer>
+</article>
+</body>
+</html>
