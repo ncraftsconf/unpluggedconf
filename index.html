@@ -97,7 +97,7 @@
             font-size: 2em;
             background-color:var(--black);
             color:var(--white);
-            position: fixed;
+            position: relative;
             top:0px;
             right:0px;
             z-index:10;
@@ -211,23 +211,7 @@
 <body>
     <article class="page">
     
-        <nav class="menu">
-
-            <span class="title">Unplugged Conf</span>
         
-            <input type="checkbox" id="menu-check" class="mobile-check" />
-                <label for="menu-check" class="label-for-menu-check">[=]</label>
-
-            <div class="links">
-                
-                <a href="#about">About</a>
-                <a href="#agenda">Agenda</a>
-                <a href="#location">Location</a>
-                <a href="#register">Register</a>
-            </div>
-
-        </nav>
-    
     <!--==================[ Section ]====================-->
 
     <section class="home">
@@ -238,8 +222,24 @@
             <h3 class="padaround2">an alternative learning playground for pationate software developers</h3>
         </div>
     </section>
-        
+    <span id="menuanchor"></span>    
+    <nav class="menu" id="topmenu">
+
+        <span class="title">Unplugged Conf</span>
     
+        <input type="checkbox" id="menu-check" class="mobile-check" />
+            <label for="menu-check" class="label-for-menu-check">[=]</label>
+
+        <div class="links">
+            
+            <a href="#about">About</a>
+            <a href="#agenda">Agenda</a>
+            <a href="#location">Location</a>
+            <a href="#register">Register</a>
+        </div>
+
+    </nav>
+
 
 
     <!--==================[ Section ]====================-->
@@ -258,7 +258,7 @@
     </section>
 
 
-
+    
 
 
     <!--==================[ Section ]====================-->
@@ -333,6 +333,15 @@
     <footer>
         <p>(c) 2018, Rui, Dylan, NewCrafts Team &amp; Friends </p>
     </footer>
-</article>
+    </article>
+    <script>
+    let topMenu = document.getElementById('topmenu');
+    let beforeTopMenu = document.getElementById('menuanchor');
+           
+    window.onscroll = function(e){
+        if(topMenu.getBoundingClientRect().top <= 0)     { topMenu.style.position='fixed'; } 
+        if(beforeTopMenu.getBoundingClientRect().top > 0) { topMenu.style.position='relative';}
+    }
+    </script>
 </body>
 </html>
