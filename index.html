@@ -150,7 +150,6 @@
 
         .transparentBar {
             background: transparent;
-            background: url('assets/images/relax.jpeg') no-repeat center center fixed;
             background-size: cover;
             min-height: 30vh;
             align-items: center;
@@ -159,7 +158,12 @@
             display: flex;
             flex-direction: column; 
         }
-
+        .bar-pic-1 {
+            background: url('assets/images/relax.jpeg') no-repeat center center fixed;
+        }
+        .bar-pic-2 {
+            background: url('assets/images/bar.jpeg') no-repeat center center fixed;
+        }
         .transparentBar h3 {
             font-size: 60px;
             color:var(--white);
@@ -245,14 +249,16 @@
     <!--==================[ Section ]====================-->
 
     <section  class="full" id="about">
+            <div class="transparentBar">
+              </div>
             <div class="content">
                 <h2>About</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu libero, finibus vitae ipsum vel, suscipit rhoncus sem. Sed at elementum nisi, id dictum eros. Pellentesque blandit faucibus eleifend. Aliquam volutpat nibh augue, a condimentum dolor luctus sit amet. Etiam non sapien ligula. Suspendisse nibh mauris, congue in magna sit amet, ultricies feugiat odio. Donec non tellus ante. Vivamus ipsum quam, vehicula vitae blandit vitae, aliquam eu turpis. Praesent nec ex pretium lacus porta interdum. Quisque euismod luctus quam, vel mollis ex mattis sed.
+                    <b>Unplugged Conf</b> is a learning playground for software developpers and all people that like to discover things one step at a time. It's fun but seriously interesting!
                 </p><p>    
-                    Praesent porta tempus dignissim. Maecenas ex nulla, eleifend at turpis sit amet, sagittis dictum velit. Vestibulum eleifend nisl orci. Integer maximus a tortor ut volutpat. Ut cursus ullamcorper faucibus. Nullam ultricies lectus ipsum, ut vulputate diam condimentum sed. In viverra quam eget lectus tempor, ac eleifend massa sollicitudin. Mauris ac metus ipsum. Fusce sed velit imperdiet, blandit nulla pulvinar, gravida est. Sed egestas eget massa vitae porta. Donec interdum vehicula est, nec iaculis nibh viverra sit amet. Ut eget tristique quam. Morbi vel bibendum sapien. Nullam ornare ornare libero nec ultricies.
+                    The core idea is that we don't need slides or computers to share value and strong ideas. At <b>Unplugged Conf</b> when you present something it's just you and people around, you can use whatever you need to help you explaining things (glasses, chairs, people, whatever...), you can even use a pen and a paper board! Just, no computers allowed!
                     </p><p>   
-                Donec bibendum ligula neque, a bibendum ipsum mattis in. Nunc blandit, ligula sed tempus viverra, diam dolor pulvinar lectus, quis gravida dui lorem imperdiet lorem. Integer vitae leo finibus magna condimentum sodales ac id arcu. Fusce vel diam pulvinar, mattis nibh ut, ultrices leo. Nam finibus vestibulum nisi ut sagittis. Nam vulputate odio vel iaculis bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur ante in mi aliquet, eget fringilla purus aliquam. Nunc volutpat aliquet risus, ac maximus metus tempor sed.
+                    Ah, yes, we also forgot to mention, that an <b>Unplugged conf</b> should take place in a bar, because sharing knowledge can also be done in a convivial and funny way!
                 </p>  
             </div>
     </section>
@@ -264,19 +270,35 @@
     <!--==================[ Section ]====================-->
 
     <section  class="full" id="agenda">
-            <div class="transparentBar white">
+            <div class="transparentBar white bar-pic-1">
                 <h3>Time to relax</h3>
             </div>
             
             <div class="content">
                 <h2>Agenda</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu libero, finibus vitae ipsum vel, suscipit rhoncus sem. Sed at elementum nisi, id dictum eros. Pellentesque blandit faucibus eleifend. Aliquam volutpat nibh augue, a condimentum dolor luctus sit amet. Etiam non sapien ligula. Suspendisse nibh mauris, congue in magna sit amet, ultricies feugiat odio. Donec non tellus ante. Vivamus ipsum quam, vehicula vitae blandit vitae, aliquam eu turpis. Praesent nec ex pretium lacus porta interdum. Quisque euismod luctus quam, vel mollis ex mattis sed.
-                </p><p>    
-                    Praesent porta tempus dignissim. Maecenas ex nulla, eleifend at turpis sit amet, sagittis dictum velit. Vestibulum eleifend nisl orci. Integer maximus a tortor ut volutpat. Ut cursus ullamcorper faucibus. Nullam ultricies lectus ipsum, ut vulputate diam condimentum sed. In viverra quam eget lectus tempor, ac eleifend massa sollicitudin. Mauris ac metus ipsum. Fusce sed velit imperdiet, blandit nulla pulvinar, gravida est. Sed egestas eget massa vitae porta. Donec interdum vehicula est, nec iaculis nibh viverra sit amet. Ut eget tristique quam. Morbi vel bibendum sapien. Nullam ornare ornare libero nec ultricies.
-                    </p><p>   
-                Donec bibendum ligula neque, a bibendum ipsum mattis in. Nunc blandit, ligula sed tempus viverra, diam dolor pulvinar lectus, quis gravida dui lorem imperdiet lorem. Integer vitae leo finibus magna condimentum sodales ac id arcu. Fusce vel diam pulvinar, mattis nibh ut, ultrices leo. Nam finibus vestibulum nisi ut sagittis. Nam vulputate odio vel iaculis bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur ante in mi aliquet, eget fringilla purus aliquam. Nunc volutpat aliquet risus, ac maximus metus tempor sed.
-                </p>  
+                    A complete agenda will be released in the next weeks.
+                </p>
+                <h3>But, how does it works?</h3>
+                <p>    
+                    The organisation of the conf will follow this program:
+                    </p>
+                    <ul>
+                        <li>All talks are 5 min (more or less 1 or 2 min, we're cool people)</li>
+                        <li>After a short introduction of our evening host, we'll have speakers talks for about 1h and something.
+                            These are all well known speakers, previously announced
+                        </li>
+                        <li>30 min break</li>
+                        <li>during this time, we'll open a market place where people in the room can propose anything she/he wants to talk about. At the end, the comitee take all the submissions and setup the program.</li>
+                        <li>then we'll start people's presentations</li>
+                        <li>...until it's done ;-)</li>
+                    </ul>
+                    <p>   
+                        As you have only 5 min, you'll have keep focused on one core idea and that's the way we learn better! 
+                    </p>  
+                    <p>
+                        <b>Unplugged Conf</b> is really the best way to share and learn with fun and confidence in the comfort a friendly place. Drinking during talks is allowed too!
+                    </p>
             </div>
     </section>
 
@@ -289,19 +311,15 @@
     <!--==================[ Section ]====================-->
 
     <section  class="full" id="location">
-            <div class="transparentBar white">
+            <div class="transparentBar white bar-pic-2">
                 <h3>Prepare to be surprised!</h3>
             </div>
             
             <div class="content">
                 <h2>Location</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu libero, finibus vitae ipsum vel, suscipit rhoncus sem. Sed at elementum nisi, id dictum eros. Pellentesque blandit faucibus eleifend. Aliquam volutpat nibh augue, a condimentum dolor luctus sit amet. Etiam non sapien ligula. Suspendisse nibh mauris, congue in magna sit amet, ultricies feugiat odio. Donec non tellus ante. Vivamus ipsum quam, vehicula vitae blandit vitae, aliquam eu turpis. Praesent nec ex pretium lacus porta interdum. Quisque euismod luctus quam, vel mollis ex mattis sed.
-                </p><p>    
-                    Praesent porta tempus dignissim. Maecenas ex nulla, eleifend at turpis sit amet, sagittis dictum velit. Vestibulum eleifend nisl orci. Integer maximus a tortor ut volutpat. Ut cursus ullamcorper faucibus. Nullam ultricies lectus ipsum, ut vulputate diam condimentum sed. In viverra quam eget lectus tempor, ac eleifend massa sollicitudin. Mauris ac metus ipsum. Fusce sed velit imperdiet, blandit nulla pulvinar, gravida est. Sed egestas eget massa vitae porta. Donec interdum vehicula est, nec iaculis nibh viverra sit amet. Ut eget tristique quam. Morbi vel bibendum sapien. Nullam ornare ornare libero nec ultricies.
-                    </p><p>   
-                Donec bibendum ligula neque, a bibendum ipsum mattis in. Nunc blandit, ligula sed tempus viverra, diam dolor pulvinar lectus, quis gravida dui lorem imperdiet lorem. Integer vitae leo finibus magna condimentum sodales ac id arcu. Fusce vel diam pulvinar, mattis nibh ut, ultrices leo. Nam finibus vestibulum nisi ut sagittis. Nam vulputate odio vel iaculis bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur ante in mi aliquet, eget fringilla purus aliquam. Nunc volutpat aliquet risus, ac maximus metus tempor sed.
-                </p>  
+                    The exact location we'll be presented soon. It will be in a bar/pub close to <a href="http://ncrafts.io">NewCrafts</a> conference place as it will start just after the end of this one. 
+                </p>
             </div>
     </section>
 
@@ -313,18 +331,18 @@
      <!--==================[ Section ]====================-->
 
      <section  class="full" id="register">
-            <div class="transparentBar white">
+            <div class="transparentBar white bar-pic-2">
                 <h3>Join us!</h3>
             </div>
             
             <div class="content">
                 <h2>Register</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu libero, finibus vitae ipsum vel, suscipit rhoncus sem. Sed at elementum nisi, id dictum eros. Pellentesque blandit faucibus eleifend. Aliquam volutpat nibh augue, a condimentum dolor luctus sit amet. Etiam non sapien ligula. Suspendisse nibh mauris, congue in magna sit amet, ultricies feugiat odio. Donec non tellus ante. Vivamus ipsum quam, vehicula vitae blandit vitae, aliquam eu turpis. Praesent nec ex pretium lacus porta interdum. Quisque euismod luctus quam, vel mollis ex mattis sed.
+                    Registration will open soon.
                 </p><p>    
-                    Praesent porta tempus dignissim. Maecenas ex nulla, eleifend at turpis sit amet, sagittis dictum velit. Vestibulum eleifend nisl orci. Integer maximus a tortor ut volutpat. Ut cursus ullamcorper faucibus. Nullam ultricies lectus ipsum, ut vulputate diam condimentum sed. In viverra quam eget lectus tempor, ac eleifend massa sollicitudin. Mauris ac metus ipsum. Fusce sed velit imperdiet, blandit nulla pulvinar, gravida est. Sed egestas eget massa vitae porta. Donec interdum vehicula est, nec iaculis nibh viverra sit amet. Ut eget tristique quam. Morbi vel bibendum sapien. Nullam ornare ornare libero nec ultricies.
+                   A small fee will be asked to secure your place and reservation for the drinks and food. 
                     </p><p>   
-                Donec bibendum ligula neque, a bibendum ipsum mattis in. Nunc blandit, ligula sed tempus viverra, diam dolor pulvinar lectus, quis gravida dui lorem imperdiet lorem. Integer vitae leo finibus magna condimentum sodales ac id arcu. Fusce vel diam pulvinar, mattis nibh ut, ultrices leo. Nam finibus vestibulum nisi ut sagittis. Nam vulputate odio vel iaculis bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur ante in mi aliquet, eget fringilla purus aliquam. Nunc volutpat aliquet risus, ac maximus metus tempor sed.
+                  When it will be open, don't hesitate to take your seat, places will be very limited!
                 </p>  
             </div>
     </section>
@@ -338,9 +356,11 @@
     let topMenu = document.getElementById('topmenu');
     let beforeTopMenu = document.getElementById('menuanchor');
            
-    window.onscroll = function(e){
-        if(topMenu.getBoundingClientRect().top <= 0)     { topMenu.style.position='fixed'; } 
-        if(beforeTopMenu.getBoundingClientRect().top > 0) { topMenu.style.position='relative';}
+    window.onscroll = () => {
+        if(topMenu.getBoundingClientRect().top <= 0)     { 
+            topMenu.style.position='fixed'; } 
+        if(beforeTopMenu.getBoundingClientRect().top > 0) { 
+            topMenu.style.position='relative';}
     }
     </script>
 </body>
